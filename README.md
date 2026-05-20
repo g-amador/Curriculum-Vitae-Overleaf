@@ -11,11 +11,11 @@ My personal Curriculum Vitae (CV) made using [Overleaf](https://www.overleaf.com
 
 ## 🖼 Preview <a name="preview"></a>
 
-You can see the [PDF](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-in-LaTex/Overleaf-CV/CV.pdf)
+You can see the [PDF](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/CV.pdf)
 
 | Page. 1 | Page. 2 |
 |:---:|:---:|
-| [![Curriculum Vitae](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-in-LaTex/Overleaf-CV/assets/samples/cv-1.png)](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-in-LaTex/Overleaf-CV/assets/samples/cv-1.png) | [![Curriculum Vitae](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-in-LaTex/Overleaf-CV/assets/samples/cv-2.png)](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-in-LaTex/Overleaf-CV/assets/samples/cv-2.png) |
+| [![Curriculum Vitae](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/assets/samples/cv-1.png)](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/assets/samples/cv-1.png) | [![Curriculum Vitae](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/assets/samples/cv-2.png)](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/assets/samples/cv-2.png) |
 
 [Back to Table of contents](#toc)
 
