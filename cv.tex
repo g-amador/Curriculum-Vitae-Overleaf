@@ -1,0 +1,637 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------ 
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen
+    % secondarycolor=cvred
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	  % sidebarwidth=0.34\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Gonçalo N. \\Paiva Amador}
+%\cvname{Gonçalo Amador}
+% job title/career
+\cvjobtitle{Full-Stack Developer,\\[0.2em] Tech Lead}
+
+%% optional information
+% profile picture
+\cvprofilepic{assets/profile.jpg}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+%\cvbirthday{July 27, 1983}
+% short address/location, use \newline if more than 1 line is required
+%\cvaddress{Rua Antero de Quental, nr.º 7 RC, ESQ, 2700-060, Amadora, Portugal}
+\cvaddress{Lisbon, Portugal}
+% phone number
+\cvphone{(+351) 962 816 858}
+% personal website
+%\cvsite{https://pandascience.net}
+% email address
+\cvmail{g.n.p.amador@gmail.com}
+% pgp key
+%\cvkey{4096R/FF00FF00}{0xAABBCCDDFF00FF00}
+% any other custom entry
+\cvcustomdata{\faFlag}{Portuguese}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% social network accounts incl. proper hyperlinks
+	\profilesection{\faLink\;Links}
+		\begin{icontable}{2.0em}{1em}
+			\social{\faLinkedin}
+				{https://www.linkedin.com/in/g-amador}
+				{/in/g-amador}
+            \social{\textcolor{black}{\faGithub}}
+				{https://github.com/g-amador}
+				{/g-amador}
+            \social{\textcolor{black}{\faGraduationCap}}
+				{https://scholar.google.com/citations?user=SV2TZDkAAAAJ}
+				{Google Scholar}
+		\end{icontable}	
+
+	\profilesection{\faLaptop\;Hard Skills}
+        % --- 5 DOTS (skgreen) ---
+        {
+            \colorlet{iconcolor}{skgreen}
+            \pointskill{{\textcolor{skgreen}{\faCloud}}}{\textcolor{skgreen}{ASP.NET Core Web API \\(.NET Core 3+)}}{5}[5]
+        }
+        {
+            \colorlet{iconcolor}{skgreen}
+            \pointskill{{\textcolor{skgreen}{\faAngular}}}{\textcolor{skgreen}{Angular}}{5}[5]
+        }
+        
+        % --- 4 DOTS (sklimegreen) ---
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faCode}}}{\textcolor{sklimegreen}{Blazor (.NET 8+)}}{4}[5]
+        }
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faDatabase}}}{\textcolor{sklimegreen}{SQL Server (T-SQL)}}{4}[5]
+        }
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faCodeBranch}}}{\textcolor{sklimegreen}{Azure DevOps (CI/CD), \\Git, Postman, \\Jira, Confluence}}{4}[5]
+        }
+        
+        % --- 3 DOTS (skyellow) ---
+        {
+            \colorlet{iconcolor}{skyellow}
+            \pointskill{{\textcolor{skyellow}{\faCubes}}}{\textcolor{skyellow}{Azure + Azure OpenAI}}{3}[5]
+        }
+        {
+            \colorlet{iconcolor}{skyellow}
+            \pointskill{{\textcolor{skyellow}{\faPython}}}{\textcolor{skyellow}{FastAPI, REST/OpenAPI \\(Swagger, ReDoc, Scalar)}}{3}[5]
+        }
+        {
+            \colorlet{iconcolor}{skyellow}
+            \pointskill{{\textcolor{skyellow}{\faServer}}}{\textcolor{skyellow}{ASP.NET Framework 4.x \\(MVC, Razor), IIS (6+)}}{3}[5]
+        }
+        {
+            \colorlet{iconcolor}{skyellow}
+            \pointskill{{\textcolor{skyellow}{\faChartBar}}}{\textcolor{skyellow}{SSRS, Power BI}}{3}[5]
+        }
+        %{
+        %    \colorlet{iconcolor}{skyellow}
+        %    \pointskill{{\textcolor{skyellow}{\faVuejs}}}{\textcolor{skyellow}{Vue.js}}{3}[5]
+        %}
+        {
+            \colorlet{iconcolor}{skyellow}
+            \pointskill{{\textcolor{skyellow}{\faJava}}}{\textcolor{skyellow}{Java, PL/SQL}}{3}[5]
+        }
+        
+        % --- 2 DOTS (skorange) ---
+        {
+            \colorlet{iconcolor}{skorange}
+            \pointskill{{\textcolor{skorange}{\faReact}}}{\textcolor{skorange}{React Native}}{2}[5]
+        }
+        {
+            \colorlet{iconcolor}{skorange}
+            \pointskill{{\textcolor{skorange}{\faCode}}}{\textcolor{skorange}{ASP Classic}}{2}[5]
+        }
+        {
+            \colorlet{iconcolor}{skorange}
+            \pointskill{{\textcolor{skorange}{\faMicrochip}}}{\textcolor{skorange}{CUDA/OpenMP/OpenCL \\(academic only)}}{2}[5]
+        }
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{assets/flags/}}
+
+    \profilesection{\faUsers\;Soft Skills}    
+        {
+            \colorlet{iconcolor}{skgreen}
+            \pointskill{{\textcolor{skgreen}{\faPuzzlePiece}}}
+                       {\textcolor{skgreen}{Problem solving}}
+                       {5}[5]
+        }
+        
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faComments}}}
+                       {\textcolor{sklimegreen}{Tech communication}}
+                       {4}[5]
+        }
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faSitemap}}}
+                       {\textcolor{sklimegreen}{System design}}
+                       {4}[5]
+        }
+        {
+            \colorlet{iconcolor}{sklimegreen}
+            \pointskill{{\textcolor{sklimegreen}{\faCheckCircle}}}
+                       {\textcolor{sklimegreen}{Ownership \& delivery}}
+                       {4}[5]
+        }
+
+    \profilesection{\faLanguage\;Languages}
+        \skill[0.1em]{\flag{PT.png}}{Portuguese\quad\quad\quad\quad\quad\; Native}
+        \skill[0.1em]{\flag{GB.png}}{English\quad\quad\quad\quad\quad\quad\;\;\;\; C2}
+        \skill[0.1em]{\flag{FR.png}}{French \quad\quad\quad\quad\quad\quad\;\;\;\; A2}
+        \skill[0.1em]{\flag{ES.png}}{Spanish\quad\quad\quad\quad\quad\quad\;\;\; A2}
+
+    \profilesection{\faHeart\;Interests}
+        \skill[0.1em]{\faGamepad}{Video games \& gamification}
+        \skill[0.1em]{\faLaptopCode}{Personal software projects}
+        \skill[0.1em]{\faMicrochip}{Personal hardware \& prototyping projects}
+        \skill[0.1em]{\faMapMarked}{Cultural exploration (monuments \& travel)}
+        \skill[0.1em]{\faWalking}{Long walks \& outdoor activities}
+
+    \profilesection{\faInfo\;Other Info}
+        \skill[0.1em]{\faBook}{\textbf{Research:} 13 publications \\(4 journals, 9 conferences)}
+        \skill[0.1em]{\faMicrophone}{\textbf{Speaker:} 9 keynote talks at \\technical events}
+        \skill[0.1em]{\faIdCard}{\textbf{Driving licence:} B1/B}
+
+	%\profilesection{About Me}
+	%\aboutme{
+	%	The giant panda is a terrestrial animal and primarily spends its life
+	%	roaming and feeding in the bamboo forests of the Qinling Mountains and in
+	%	the hilly province of Sichuan.
+	%}
+
+	%\profilesection{Diagrams}
+	%\begin{sidebarminipage}
+	%	\chartlabel{Bubble}
+	%	\chartlabel{Diagrams}
+	%	\chartlabel{with}
+	%	\chartlabel{proper}
+	%	\chartlabel{overflow}
+	%	\chartlabel{protection}
+	%	\chartlabel{for}
+	%	\chartlabel{labels}
+	%\end{sidebarminipage}
+
+	%\begin{figure}\centering
+	%	\smartdiagram[bubble diagram]{
+	%		\textcolor{white}{\textbf{Being a}} \\
+	%		\textcolor{white}{\textbf{Panda}}, % center bubble
+	%		\textcolor{black!90}{Eating},
+	%		\textcolor{black!90}{Sleeping},
+	%		\textcolor{black!90}{Rolling},
+	%		\textcolor{black!90}{Playing},
+	%		\textcolor{black!90}{Chilling}
+	%	}
+	%\end{figure}
+
+	%\chartlabel{Wheel Chart}
+
+	%\wheelchart{3.7em}{2em}{%
+	%20/3em/maincolor!50/Chill,
+	%15/3em/maincolor!15/Play,
+	%30/4em/maincolor!40/Sleep,
+	%20/3em/maincolor!20/Eat
+	%}
+
+	%\profilesection{Barskills}
+	%\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+	%\barskill{\faImage}{Playing Chess}{30}
+	%\barskill{\faMusic}{Playing the bamboo flute}{50}
+
+	%\profilesection{Memberships}
+	%\begin{memberships}
+	%	\membership[4em]{assets/logo.png}{PandaScience.net}
+	%	\membership[4em]{assets/logo.png}{Some longer text spanning over more than
+	%		only one line}
+	%\end{memberships}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+
+\cvsection{\faUserTie\;Professional Summary}
+Software Engineer and Tech Lead experienced in enterprise systems, integration, and legacy modernization. Trusted technical point of contact for clients, leading planning, debugging, and delivery of critical systems. PhD in Computer Science focused on game engines, game algorithms, high‑performance computing, and teaching. Focused on AI‑assisted engineering, AI integration, gamification, and modern development practices.
+
+\cvsection{\faBriefcase\;Professional Experience}
+\begin{cvtable}[3]
+
+    % --- \href{https://amaris.com/}{Amaris} (merged progression) ---
+    \cvitem{Apr 2021 \\ Present}
+        {Full-Stack Developer\\ → Team Lead → Tech Lead\vspace{0.3em}}
+        {\href{https://amaris.com/}{Amaris} · Enterprise Financial Systems}
+        {
+         Led full‑stack development, system integration, and modernization of enterprise platforms. 
+         Delivered AI‑enabled services, improved architecture, and served as primary technical contact.
+         \newline \textbf{Tech Stack:} 
+         {\color{skgreen}ASP.NET Core Web API},
+         {\color{skgreen}Angular}, 
+         {\color{sklimegreen}Blazor},
+         {\color{sklimegreen}SQL Server (T‑SQL)}, 
+         {\color{sklimegreen}Azure DevOps (CI/CD)}, 
+         {\color{sklimegreen}Git}, 
+         {\color{sklimegreen}Postman},
+         {\color{sklimegreen}Jira},
+         {\color{sklimegreen}Confluence},
+         {\color{skyellow}Azure + Azure OpenAI},
+         {\color{skyellow}FastAPI, REST/OpenAPI}, 
+         {\color{skyellow}ASP.NET Framework (MVC, Razor)},
+         {\color{skyellow}IIS},
+         {\color{skyellow}SSRS, Power BI},
+         {\color{skorange}ASP Classic}}
+
+    % --- AXIANS ---
+    \cvitem{Aug 2020 \\ Apr 2021}
+        {Support Engineer · Cloud Services}
+        {\href{https://www.axians.pt/}{Axians Portugal}}
+        {Resolved incidents and ensured stability of cloud-based media and communication services.
+         \newline \textbf{Tech Stack:} 
+         {\color{sklimegreen}SQL Server (T‑SQL)},
+         {\color{skyellow}Azure},
+         {\color{skyellow}IIS},
+         {\color{skorange}React Native}}
+
+    % --- \href{https://amaris.com/}{Amaris} (ASP Classic) ---
+    \cvitem{Jul 2019 \\ May 2020}
+        {ASP Classic Developer}
+        {\href{https://amaris.com/}{Amaris} · Enterprise Financial Systems}
+        {Maintained financial applications and optimized database queries to support stable system operation.
+         \newline \textbf{Tech Stack:} 
+         {\color{sklimegreen}SQL Server (T‑SQL)},
+         {\color{skorange}ASP Classic}}
+
+    % --- \href{https://amaris.com/}{Amaris} (Java / PL-SQL) ---
+    \cvitem{Jan 2019 \\ Jun 2019}
+        {Java Developer · Data Migration}
+        {\href{https://amaris.com/}{Amaris} · Enterprise Financial Systems}
+        {Supported enhancements to existing systems and reviewed PL/SQL migration scripts for inter‑bank data transfer.
+         \newline \textbf{Tech Stack:} 
+         {\color{skyellow}Java}, 
+         {\color{skyellow}PL/SQL}}
+
+    % --- TECHNICAL ACCOUNT MANAGER ---
+    \cvitem{Feb 2018 \\ Dec 2018}
+        {Technical Account Manager}
+        {\href{https://amaris.com/}{Amaris} · Gamification \& WFM}
+        {Supported deployments, onboarding, workflow setup, and technical operations.
+         \newline \textbf{Tech Stack:} 
+         {\color{sklimegreen}SQL Server (T‑SQL)}, 
+         {\color{sklimegreen}Azure DevOps (CI/CD)}, 
+         {\color{skyellow}REST/OpenAPI},
+         {\color{skyellow}IIS}, 
+         {\color{skyellow}SRSS, Power BI}}
+
+    % --- REDIT ---
+    \cvitem{Jul 2017 \\ Jan 2018}
+        {Software Engineer}
+        {\href{https://conkord.com/}{RedIT} · Energy, Social/Health \& Enterprise Systems}
+        {Developed and maintained large‑scale model‑based systems.
+         \newline \textbf{Tech Stack:} 
+         {\color{skgreen}Angular}, 
+         {\color{sklimegreen}SQL Server (T‑SQL)}, 
+         {\color{skyellow}ASP.NET Framework (MVC, Razor), IIS}, 
+         {\color{skyellow}PL‑SQL}}
+
+    % --- PHD RESEARCH ---
+    \cvitem{Jan 2013 \\ Dec 2016}
+        {Researcher · Game Engines \& AI}
+        {\href{https://www.fct.pt/}{FCT} · \href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {PhD grant holder under the reference 
+         \textit{SFRH/BD/86533/2012}, researching game engine architecture and hybrid pathfinding algorithms.
+         Published and presented work in academic venues.
+         \newline \textbf{Tech Stack:}
+         {\color{sklimegreen}LaTeX},
+         {\color{sklimegreen}Git},
+         {\color{skyellow}OpenGL},
+         {\color{skyellow}Java},
+         {\color{skorange}C/C++}}    
+
+    % --- LAB INSTRUCTOR ---
+    \cvitem{Jan 2012 \\ Jul 2016}
+        {Lab Instructor · \href{https://www.di.ubi.pt/~agomes/tjv/}{Game Tech} \& \href{https://www.di.ubi.pt/~agomes/cg/}{Graphics}}
+        {\href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {Delivered lab sessions and supervised student projects.
+         \newline \textbf{Tech Stack:} 
+         {\color{sklimegreen}LaTeX},
+         {\color{skyellow}OpenGL},
+         {\color{skyellow}Java},   
+         {\color{skorange}C/C++}}
+
+    % --- MMO ENGINE RESEARCH ---
+    % --- EDUCATIONAL TECH ---
+    \cvitem{Jul 2007 \\ Dec 2011}
+        {Researcher}
+        {\href{https://www.it.pt/}{Instituto de Telecomunicações} · \href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {Contributed to funded research projects, including:
+         \newline — \textit{\href{https://www.it.pt/Projects/Index/804}{PTDC/EIA/70830/2006 — MOGGY}}: developed components for a browser‑based MMO engine focused on distributed systems.
+         \newline — \textit{POCI/V/04.01302/0155/0002/2006}: created interactive learning materials and visualization‑driven mathematical resources.
+         \newline \textbf{Tech Stack:}
+         {\color{sklimegreen}LaTeX},         
+         {\color{skyellow}OpenGL},
+         {\color{skyellow}Java}, 
+         {\color{skorange}C/C++},         
+         {\color{skorange}CUDA/OpenMP/OpenCL}}
+    
+\end{cvtable}
+
+\newpage
+\makebacksidebar
+% \newgeometry{
+% 	top=\topbottommargin,
+% 	bottom=\topbottommargin,
+% 	right=\leftrightmargin,
+% 	left=\leftrightmargin
+% }
+
+\cvsection{\faGraduationCap\;Education}
+\begin{cvtable}[3]
+
+    % --- PhD ---
+    \cvitem{Jan 2013 \\ Jun 2017}
+        %{\href{https://www.di.ubi.pt/Cursos/dei/}{PhD in Computer Science and Engineering} (18/20)}
+        {\href{https://www.di.ubi.pt/Cursos/dei/}{PhD in Computer Science} (18/20)}
+        {\href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {
+            \textbf{Thesis:} Influence-based Motion Planning Algorithms for Games\\
+            \textbf{Supervisor:} \href{http://www.di.ubi.pt/~agomes/}{Professor Abel Gomes}\\
+            Developed a modular game engine (JOT) and integrated influence-map techniques with pathfinding algorithms, contributing research, algorithm design, engine development, and scientific writing.
+            \newline \textbf{Tech Stack:}
+            {\color{sklimegreen}LaTeX},
+            {\color{sklimegreen}Git},
+            {\color{skyellow}OpenGL},
+            {\color{skyellow}Java},
+            {\color{skorange}C/C++}
+        }
+
+    % --- Bachelor's Degree (IT & Systems) ---
+    \cvitem{Sep 2010 \\ Jul 2011}
+        %{Bachelor's Degree in Information Technologies and Systems (15/20)}
+        {BSc in Information Systems \& Technologies (15/20)\vspace{0.3em}}
+        {\href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {
+            \textbf{Final Project:} Seamless zoning algorithms for MMOGs over a Grid\\
+            \textbf{Supervisor:} \href{http://www.di.ubi.pt/~agomes/}{Professor Abel Gomes}\\
+            Developed scene‑management techniques for a Java‑based grid‑computing game, contributing research, implementation, evaluation of grid frameworks, and reporting.
+            \newline \textbf{Tech Stack:}
+            {\color{sklimegreen}LaTeX},
+            {\color{skyellow}OpenGL},
+            {\color{skyellow}Java},
+            {\color{skorange}C/C++}
+        }
+
+    % --- Master's Degree ---
+    \cvitem{Sep 2007 \\ Oct 2009}
+        %{\href{https://www.di.ubi.pt/Cursos/mei/}{MSc in Computer Science and Engineering} (18/20)}
+        {\href{https://www.di.ubi.pt/Cursos/mei/}{MSc in Computer Science} (18/20)}
+        {\href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {
+            \textbf{Thesis:} Real-Time 3D Rendering of Water using CUDA\\
+            \textbf{Supervisor:} \href{http://www.di.ubi.pt/~agomes/}{Professor Abel Gomes}\\
+            Extended a 2D fluid‑simulation algorithm to 3D using GPU techniques, contributing research, CUDA implementation, and scientific writing and presentations.
+            \newline \textbf{Tech Stack:}
+            {\color{sklimegreen}LaTeX},
+            {\color{skyellow}OpenGL},
+            {\color{skyellow}Java},
+            {\color{skorange}C/C++},
+            {\color{skorange}CUDA/OpenMP/OpenCL}
+        }
+
+    % --- Bachelor's Degree (CSE) ---
+    \cvitem{Sep 2001 \\ Jul 2007}
+        %{\href{https://www.di.ubi.pt/Cursos/lei/}{BSc in Computer Science and Engineering}}
+        {\href{https://www.di.ubi.pt/Cursos/lei/}{BSc in Computer Science} (13/20)}
+        {\href{https://www.ubi.pt/}{Universidade da Beira Interior}}
+        {
+            \newline \textbf{Tech Stack:}
+            {\color{sklimegreen}SQL Server (T‑SQL)}, 
+            {\color{sklimegreen}LaTeX},
+            {\color{skyellow}OpenGL},
+            {\color{skyellow}Java},
+            {\color{skorange}C/C++},\\
+            {\color{skorange}Prolog},
+            {\color{skorange}OCaml}
+        }
+
+    % --- High School ---
+    \cvitem{Sept 1998 \\ Jul 2001}
+        {Professional High-School Degree in Electrotechnics and Electronics}
+        {\href{https://site.espeniche.pt/}{High‑School of Peniche}}
+        {\vspace{0.5cm}}
+
+\end{cvtable}
+
+\cvsection{\faAward\;Technical Certifications}
+\begin{cvtable}[3]
+
+  % ---------- 2023 to 2026 ----------
+  \cvitem{2023 -- 2026}
+    {
+      \badgebox{assets/badges/Udemy/solid_principles.jpg}
+      \badgebox{assets/badges/Udemy/angular_complete_guide.jpg}
+      \badgebox{assets/badges/Udemy/asp_net_core_6.jpg}
+      \badgebox{assets/badges/SAP/genai1_open_badge.png}
+    }
+    {}
+    {\vspace{0.2cm}}
+
+  % ---------- 2023 ----------
+  %\cvitem{2023}
+  %  {
+  %    \includegraphics[height=2.4cm]{assets/badges/SAP/generative_ai_sap.png}
+  %  }
+  %  {}
+  %  {\\}
+
+  % ---------- 2021 ----------
+  \cvitem{2021}
+    {
+      \badgebox{assets/badges/SAP/btpma1_open_badge.png}
+      \badgebox{assets/badges/SAP/fiori-ea1_open_badge.png}
+      \badgebox{assets/badges/SAP/ds3_open_badge.png}
+      \badgebox{assets/badges/SAP/ai1_open_badge.png}
+    }
+    {}
+    {\vspace{0.2cm}}
+
+  % ---------- 2017 and 2018 ----------
+  \cvitem{2017 -- 2018}
+    {
+      \badgebox{assets/badges/SAP/cp5_open_badge.png}
+      \badgebox{assets/badges/SAP/hcp1-1_open_badge.png}
+      \badgebox{assets/badges/SAP/hcp2-1_open_badge.png}
+    }
+    {}
+    {\vspace{0.2cm}}
+
+  % ---------- 2014 ----------
+  \cvitem{2014}
+    {
+      \badgebox{assets/badges/Cisco-INTRUDUCTION-TO-NETWORKS.jpg}
+    }
+    {}
+    {\;}
+
+\end{cvtable}
+
+
+
+%\cvsection{section}
+%\cvsubsection{Subsection}
+%\begin{cvtable}
+%	\cvitem{<dates>}{<cv-item title>}{<location>}{<optional: description>}
+%\end{cvtable}
+%
+%\cvsection{cvitem}
+%\cvsubsection{Multi-line with longer description}
+%\begin{cvtable}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%	\cvitem{date}{Description}{location}{Some longer and more detailed
+%		description, that takes two lines of space instead of only one.}
+%\end{cvtable}
+%
+%\cvsubsection{One-line without description}
+%\begin{cvtable}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%	\cvitem{Award}{One-line description}{Sponsor}{}
+%\end{cvtable}
+%
+%\cvsection{cvitemshort}
+%\cvsubsection{One-line}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%	\cvitemshort{Key}{Some further description}
+%\end{cvtable}
+%
+%\cvsubsection{Multi-line with longer description}
+%\begin{cvtable}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%	\cvitemshort{Key}{Some further description. Can fill even more than
+%		only one single line while still keeping the correct indendation level.}
+%\end{cvtable}
+%
+%\cvsection{cvpubitem}
+%\begin{cvtable}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title}{Authors}{Journal}{Year}
+%	\cvpubitem{Publication title that is spanning over multiple lines and still
+%		does not look too bad}{Authors}{Journal}{Year}
+%\end{cvtable}
+
+\cvsignature
+
+\end{document}
