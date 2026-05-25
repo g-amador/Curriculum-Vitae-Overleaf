@@ -11,7 +11,7 @@ My personal Curriculum Vitae (CV) made using [Overleaf](https://www.overleaf.com
 
 ## 🖼 Preview <a name="preview"></a>
 
-You can see the [PDF](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/CV.pdf)
+You can see the [PDF](https://raw.githubusercontent.com/g-amador/Curriculum-Vitae-Overleaf/Overleaf-CV/cv.pdf)
 
 | Page. 1 | Page. 2 |
 |:---:|:---:|
