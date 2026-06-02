@@ -25,7 +25,7 @@ You can see the [PDF](https://raw.githubusercontent.com/g-amador/Curriculum-Vita
 
 #### Requirements
 
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
+A full TeX distribution is assumed. [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
 You can [install TeX from upstream](http://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
 
 #### Usage
@@ -63,7 +63,7 @@ Please keep the following in mind:
 - You may not claim authorship of this repository or its original template design.
 - If you extend, adapt, or build upon this template, I would genuinely appreciate hearing about it — it’s always great to see how others improve and reuse the work.
 
-For full legal details, please refer to the **LICENSE** file included with the project.
+For full legal details, please refer to the **[LICENSE.txt](https://github.com/g-amador/Curriculum-Vitae-Overleaf/blob/Overleaf-CV/LICENSE)** file included with the project.
 
 If you have questions, suggestions, or want to share your work, feel free to reach out:
 
