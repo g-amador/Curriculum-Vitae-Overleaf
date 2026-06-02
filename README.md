@@ -63,7 +63,7 @@ Please keep the following in mind:
 - You may not claim authorship of this repository or its original template design.
 - If you extend, adapt, or build upon this template, I would genuinely appreciate hearing about it — it’s always great to see how others improve and reuse the work.
 
-For full legal details, please refer to the **[LICENSE.txt](https://github.com/g-amador/Curriculum-Vitae-Overleaf/blob/Overleaf-CV/LICENSE)** file included with the project.
+For full legal details, please refer to the **[LICENSE](https://github.com/g-amador/Curriculum-Vitae-Overleaf/blob/Overleaf-CV/LICENSE)** file included with the project.
 
 If you have questions, suggestions, or want to share your work, feel free to reach out:
 
